@@ -1,27 +1,28 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 using System.Collections;
 
 public class PlayerJump : MonoBehaviour
 {
-    [Header("Tilemap")]
-    [SerializeField] private Tilemap tilemap;
+    [Header("Stage Tilemaps (10 stages)")]
+    [SerializeField] private Tilemap[] stageTilemaps;
+    [SerializeField] private int currentStageIndex = 0;
 
-    [Header("Obstacle Tile")]
-    [SerializeField] private RuleTile redRuleTile;
+    [Header("Obstacle Tiles")]
+    [SerializeField] private RuleTile[] obstacleTiles;
 
     [Header("Jump")]
     [SerializeField] private float jumpSpeed = 20f;
     [SerializeField] private float playerZ = -2f;
 
-    private bool isJumping = false;
-
-    // Input System
     private InputAction jumpAction;
-
-    // 向き
     private Vector3Int facingDirection = Vector3Int.up;
+    private PlayerStateController state;
+
+    private Tilemap CurrentTilemap => stageTilemaps[currentStageIndex];
+
+    public bool IsJumping => state.CurrentState == PlayerState.Jumping;
 
     public void SetFacingDirection(Vector3Int dir)
     {
@@ -31,73 +32,72 @@ public class PlayerJump : MonoBehaviour
 
     void Awake()
     {
-        // 左クリック専用 InputAction を作成
+        state = GetComponent<PlayerStateController>();
+
         jumpAction = new InputAction(
-            name: "Jump",
-            type: InputActionType.Button,
-            binding: "<Mouse>/leftButton"
-        );
+            "Jump",
+            InputActionType.Button,
+            "<Mouse>/leftButton");
 
-        jumpAction.performed += OnJumpPerformed;
+        jumpAction.performed += _ => TryJump();
     }
 
-    void OnEnable()
-    {
-        jumpAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        jumpAction.Disable();
-    }
-
-    void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {
-        // ★ ここで完全に弾く
-        if (isJumping)
-            return;
-
-        TryJump();
-    }
+    void OnEnable() => jumpAction.Enable();
+    void OnDisable() => jumpAction.Disable();
 
     void TryJump()
     {
-        Vector3Int currentCell = tilemap.WorldToCell(transform.position);
-        Vector3Int jumpTargetCell = currentCell + facingDirection * 2;
+        if (!state.CanJump) return;
+        Tilemap tilemap = CurrentTilemap;
 
-        TileBase targetTile = tilemap.GetTile(jumpTargetCell);
+        Vector3Int current = tilemap.WorldToCell(transform.position);
+        Vector3Int target = current + facingDirection * 2;
 
-        if (targetTile == null) return;
-        if (targetTile == redRuleTile) return;
+        TileBase tile = tilemap.GetTile(target);
+        if (!IsJumpable(tilemap, target)) return;
 
-        Vector3 targetWorldPos = tilemap.GetCellCenterWorld(jumpTargetCell);
-        targetWorldPos.z = playerZ;
+        Vector3 worldPos = tilemap.GetCellCenterWorld(target);
+        worldPos.z = playerZ;
 
-        StartCoroutine(JumpCoroutine(targetWorldPos));
+        StartCoroutine(JumpCoroutine(worldPos));
+    }
+
+    bool IsJumpable(Tilemap tilemap, Vector3Int cell)
+    {
+        TileBase tile = tilemap.GetTile(cell);
+        if (tile == null) return false;
+
+        foreach (var obstacle in obstacleTiles)
+        {
+            if (tile == obstacle)
+                return false;
+        }
+        return true;
     }
 
     IEnumerator JumpCoroutine(Vector3 targetPos)
     {
-        isJumping = true;
-
-        // ★ 入力を完全停止
-        jumpAction.Disable();
+        state.SetState(PlayerState.Jumping);
 
         while (Vector3.Distance(transform.position, targetPos) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 targetPos,
-                jumpSpeed * Time.deltaTime
-            );
+                jumpSpeed * Time.deltaTime);
             yield return null;
         }
 
         transform.position = targetPos;
+        state.SetState(PlayerState.Idle);
+    }
 
-        isJumping = false;
+    // ★ ステージ切り替え用（外部から呼ぶ）
+    public void SetStage(int stageIndex)
+    {
+        if (stageIndex < 0 || stageIndex >= stageTilemaps.Length)
+            return;
 
-        // ★ 処理終了後に入力再開
-        jumpAction.Enable();
+        currentStageIndex = stageIndex;
     }
 }

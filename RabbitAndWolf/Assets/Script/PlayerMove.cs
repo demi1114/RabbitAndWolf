@@ -1,28 +1,33 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("Tilemap")]
-    [SerializeField] private Tilemap tilemap;
+    [Header("Stage Tilemaps (10 stages)")]
+    [SerializeField] private Tilemap[] stageTilemaps;
+    [SerializeField] private int currentStageIndex = 0;
 
-    [Header("RuleTiles")]
-    [SerializeField] private RuleTile redRuleTile;
-    [SerializeField] private RuleTile blueRuleTile;
-    [SerializeField] private RuleTile orangeRuleTile;
-    [SerializeField] private RuleTile purpleRuleTile;
+    [Header("Obstacle Tiles")]
+    [SerializeField] private RuleTile[] obstacleTiles;
 
     [Header("Move")]
-    [SerializeField] private float moveInterval = 0.12f; // ★ 移動間隔（小さいほど速い）
+    [SerializeField] private float moveInterval = 0.12f;
     [SerializeField] private float moveSpeed = 15f;
 
     [Header("Z Position")]
     [SerializeField] private float playerZ = -2f;
 
-    private bool isMoving = false;
-    private float moveTimer = 0f;
+    private float moveTimer;
+    private PlayerStateController state;
+
+    private Tilemap CurrentTilemap => stageTilemaps[currentStageIndex];
+
+    void Awake()
+    {
+        state = GetComponent<PlayerStateController>();
+    }
 
     void Start()
     {
@@ -33,7 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (isMoving) return;
+        if (!state.CanMove) return;
 
         moveTimer -= Time.deltaTime;
         if (moveTimer > 0f) return;
@@ -47,47 +52,66 @@ public class PlayerMove : MonoBehaviour
 
     Vector2 GetInputDirection()
     {
-        // 縦横どちらか一方向のみ（斜め防止）
         if (Keyboard.current.wKey.isPressed) return Vector2.up;
         if (Keyboard.current.sKey.isPressed) return Vector2.down;
         if (Keyboard.current.aKey.isPressed) return Vector2.left;
         if (Keyboard.current.dKey.isPressed) return Vector2.right;
-
         return Vector2.zero;
     }
 
-    void TryMove(Vector3Int direction)
+    void TryMove(Vector3Int dir)
     {
-        Vector3Int currentCell = tilemap.WorldToCell(transform.position);
-        Vector3Int targetCell = currentCell + direction;
+        GetComponent<PlayerJump>()?.SetFacingDirection(dir);
 
-        TileBase targetTile = tilemap.GetTile(targetCell);
+        Tilemap tilemap = CurrentTilemap;
 
-        if (targetTile == null) return;
-        if (targetTile == redRuleTile) return;
+        Vector3Int current = tilemap.WorldToCell(transform.position);
+        Vector3Int target = current + dir;
 
-        Vector3 targetWorldPos = tilemap.GetCellCenterWorld(targetCell);
-        targetWorldPos.z = playerZ;
-        GetComponent<PlayerJump>()?.SetFacingDirection(direction);
+        if (!IsMovable(tilemap, target)) return;
 
-        StartCoroutine(MoveCoroutine(targetWorldPos));
+        Vector3 worldPos = tilemap.GetCellCenterWorld(target);
+        worldPos.z = playerZ;
+
+        StartCoroutine(MoveCoroutine(worldPos));
+    }
+
+    bool IsMovable(Tilemap tilemap, Vector3Int cell)
+    {
+        TileBase tile = tilemap.GetTile(cell);
+        if (tile == null) return false;
+
+        foreach (var obstacle in obstacleTiles)
+        {
+            if (tile == obstacle)
+                return false;
+        }
+        return true;
     }
 
     IEnumerator MoveCoroutine(Vector3 targetPos)
     {
-        isMoving = true;
+        state.SetState(PlayerState.Moving);
 
         while (Vector3.Distance(transform.position, targetPos) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 targetPos,
-                moveSpeed * Time.deltaTime
-            );
+                moveSpeed * Time.deltaTime);
             yield return null;
         }
 
         transform.position = targetPos;
-        isMoving = false;
+        state.SetState(PlayerState.Idle);
+    }
+
+    // ★ ステージ切り替え用（PlayerJump と同じ index を使う）
+    public void SetStage(int stageIndex)
+    {
+        if (stageIndex < 0 || stageIndex >= stageTilemaps.Length)
+            return;
+
+        currentStageIndex = stageIndex;
     }
 }
