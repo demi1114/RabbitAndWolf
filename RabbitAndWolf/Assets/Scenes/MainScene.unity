@@ -2992,7 +2992,7 @@ GameObject:
   - component: {fileID: 223326654}
   - component: {fileID: 223326655}
   - component: {fileID: 223326657}
-  - component: {fileID: 223326656}
+  - component: {fileID: 223326658}
   m_Layer: 0
   m_Name: enemy2_3
   m_TagString: Untagged
@@ -3073,26 +3073,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &223326656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223326653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
-  stageTilemaps:
-  - {fileID: 345025397}
-  currentStageIndex: 0
-  obstacleTiles:
-  - {fileID: 11400000, guid: 7f79cd4ca9be2af4a86759079b224119, type: 2}
-  moveInterval: 0.4
-  moveSpeed: 10
-  enemyZ: -2
 --- !u!114 &223326657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3106,6 +3086,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHitDetector
   tilemap: {fileID: 345025397}
+--- !u!114 &223326658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223326653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  stageTilemaps:
+  - {fileID: 345025397}
+  currentStageIndex: 0
+  obstacleTiles:
+  - {fileID: 11400000, guid: 7f79cd4ca9be2af4a86759079b224119, type: 2}
+  moveInterval: 0.5
+  moveSpeed: 10
+  enemyZ: -2
 --- !u!1 &225747002
 GameObject:
   m_ObjectHideFlags: 0
@@ -10815,7 +10815,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 0}
+  m_BackGroundColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10927,8 +10927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02eb8b5abf606424ca39ed35a7bf54af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTileScroll
-  moveX: 15
-  moveY: 9
+  moveX: 17
+  moveY: 10
   targetCamera: {fileID: 423530030}
 --- !u!1 &427215955
 GameObject:
@@ -12450,7 +12450,7 @@ Transform:
   m_GameObject: {fileID: 539241557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -3.888889, z: 0}
+  m_LocalPosition: {x: 3.888889, y: -3.888889, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12726,15 +12726,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 563789922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   stageTilemaps:
   - {fileID: 1718519477}
   currentStageIndex: 0
   obstacleTiles:
   - {fileID: 11400000, guid: aa7068759924e6846b0b4eedf973694c, type: 2}
-  moveInterval: 0.4
+  moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
 --- !u!1 &566866483
@@ -28275,15 +28275,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1031531244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   stageTilemaps:
   - {fileID: 994344048}
   currentStageIndex: 0
   obstacleTiles:
   - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
-  moveInterval: 0.4
+  moveInterval: 0.8
   moveSpeed: 10
   enemyZ: -2
 --- !u!1 &1039750642
@@ -57448,15 +57448,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659170251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   stageTilemaps:
   - {fileID: 1528276135}
   currentStageIndex: 0
   obstacleTiles:
   - {fileID: 11400000, guid: 9f85b2b078477054cbcf68f86acf1478, type: 2}
-  moveInterval: 0.4
+  moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
 --- !u!1 &1663126281
@@ -57573,15 +57573,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1663126281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   stageTilemaps:
   - {fileID: 1233564168}
   currentStageIndex: 0
   obstacleTiles:
   - {fileID: 11400000, guid: aa7068759924e6846b0b4eedf973694c, type: 2}
-  moveInterval: 0.4
+  moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
 --- !u!1 &1675243781
@@ -61287,7 +61287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1902942354
 Transform:
   m_ObjectHideFlags: 0
@@ -62370,7 +62370,7 @@ GameObject:
   - component: {fileID: 1980652706}
   - component: {fileID: 1980652707}
   - component: {fileID: 1980652709}
-  - component: {fileID: 1980652708}
+  - component: {fileID: 1980652710}
   m_Layer: 0
   m_Name: enemy2_2
   m_TagString: Untagged
@@ -62451,26 +62451,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1980652708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980652705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b6f0e0c0215c147a51e2b465054dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChaseMove
-  stageTilemaps:
-  - {fileID: 345025397}
-  currentStageIndex: 0
-  obstacleTiles:
-  - {fileID: 11400000, guid: 7f79cd4ca9be2af4a86759079b224119, type: 2}
-  moveInterval: 0.4
-  moveSpeed: 10
-  enemyZ: -2
 --- !u!114 &1980652709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62484,6 +62464,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHitDetector
   tilemap: {fileID: 345025397}
+--- !u!114 &1980652710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980652705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  stageTilemaps:
+  - {fileID: 345025397}
+  currentStageIndex: 0
+  obstacleTiles:
+  - {fileID: 11400000, guid: 7f79cd4ca9be2af4a86759079b224119, type: 2}
+  moveInterval: 0.5
+  moveSpeed: 10
+  enemyZ: -2
 --- !u!1 &1984468089
 GameObject:
   m_ObjectHideFlags: 0
