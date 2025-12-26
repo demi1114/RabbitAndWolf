@@ -568,9 +568,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -816,9 +818,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -1400,7 +1404,7 @@ MonoBehaviour:
   - {fileID: 1528276135}
   - {fileID: 1285690350}
   - {fileID: 994344048}
-  currentStageIndex: 7
+  currentStageIndex: 1
   obstacleTiles:
   - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   - {fileID: 11400000, guid: aa7068759924e6846b0b4eedf973694c, type: 2}
@@ -10094,9 +10098,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -11099,9 +11105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -22057,7 +22065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1043918983
 Transform:
   m_ObjectHideFlags: 0
@@ -33895,9 +33903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -48479,9 +48489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -48727,9 +48739,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -51477,9 +51491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
@@ -51748,7 +51764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1902942354
 Transform:
   m_ObjectHideFlags: 0
@@ -52205,9 +52221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02890dcc9ae1614caf5d27431ca405c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  stageTilemaps: []
+  stageTilemaps:
+  - {fileID: 1285690350}
   currentStageIndex: 0
-  obstacleTiles: []
+  obstacleTiles:
+  - {fileID: 11400000, guid: 815d822f09fa21347960079056503a63, type: 2}
   moveInterval: 0.5
   moveSpeed: 10
   enemyZ: -2
