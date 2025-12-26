@@ -133,4 +133,12 @@ public class PlayerMove : MonoBehaviour
 
         currentStageIndex = stageIndex;
     }
+    public void ResetMove()
+    {
+        StopAllCoroutines();
+        moveTimer = 0f;
+
+        if (state != null)
+            state.ResetState();
+    }
 }

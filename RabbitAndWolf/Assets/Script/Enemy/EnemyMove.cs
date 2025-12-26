@@ -74,14 +74,33 @@ public class EnemyMove : MonoBehaviour
 
     bool IsMovable(Tilemap tilemap, Vector3Int cell)
     {
+        // タイルが無い
         TileBase tile = tilemap.GetTile(cell);
         if (tile == null) return false;
 
+        // タイル自体の障害物判定
         foreach (var obstacle in obstacleTiles)
         {
             if (tile == obstacle)
                 return false;
         }
+
+        // ★ 障害物オブジェクト判定（Player と同じ）
+        Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
+
+        Collider2D hit = Physics2D.OverlapBox(
+            worldPos,
+            Vector2.one * 0.8f,
+            0f
+        );
+
+        if (hit)
+        {
+            DestructibleObject block = hit.GetComponent<DestructibleObject>();
+            if (block != null && block.IsBlocking)
+                return false;
+        }
+
         return true;
     }
 

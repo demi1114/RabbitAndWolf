@@ -119,4 +119,14 @@ public class PlayerJump : MonoBehaviour
 
         currentStageIndex = stageIndex;
     }
+
+    public void ResetJump()
+    {
+        StopAllCoroutines();
+        facingDirection = Vector3Int.up;
+
+        if (state != null)
+            state.ResetState();
+    }
+
 }

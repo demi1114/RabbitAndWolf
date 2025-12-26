@@ -78,4 +78,13 @@ public class PlayerDestroy : MonoBehaviour
 
         currentStageIndex = stageIndex;
     }
+
+    public void ResetDestroy()
+    {
+        facingDirection = Vector3Int.up;
+
+        if (state != null)
+            state.ResetState();
+    }
+
 }

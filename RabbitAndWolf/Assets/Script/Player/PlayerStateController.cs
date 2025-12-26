@@ -18,4 +18,9 @@ public class PlayerStateController : MonoBehaviour
     {
         CurrentState = state;
     }
+
+    public void ResetState()
+    {
+        CurrentState = PlayerState.Idle;
+    }
 }

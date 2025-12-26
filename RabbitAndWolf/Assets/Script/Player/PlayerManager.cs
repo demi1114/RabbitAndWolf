@@ -35,9 +35,11 @@ public class PlayerManager : MonoBehaviour
     {
         GameObject current = players[currentIndex];
 
-        // ★ 現在位置を保存
         Vector3 sharedPosition = current.transform.position;
         Quaternion sharedRotation = current.transform.rotation;
+
+        // ★ 現在プレイヤーを完全リセット
+        ResetPlayer(current);
 
         current.SetActive(false);
 
@@ -45,10 +47,20 @@ public class PlayerManager : MonoBehaviour
 
         GameObject next = players[currentIndex];
 
-        // ★ 位置・向きを完全コピー
         next.transform.position = sharedPosition;
         next.transform.rotation = sharedRotation;
 
+        // ★ 次プレイヤーもリセット
+        ResetPlayer(next);
+
         next.SetActive(true);
     }
+
+    void ResetPlayer(GameObject player)
+    {
+        player.GetComponent<PlayerMove>()?.ResetMove();
+        player.GetComponent<PlayerJump>()?.ResetJump();
+        player.GetComponent<PlayerDestroy>()?.ResetDestroy();
+    }
+
 }

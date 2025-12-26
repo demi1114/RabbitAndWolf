@@ -102,8 +102,26 @@ public class EnemyChaseMove : MonoBehaviour
             if (tile == obstacle)
                 return false;
         }
+
+        // ★ 障害物オブジェクト判定
+        Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
+
+        Collider2D hit = Physics2D.OverlapBox(
+            worldPos,
+            Vector2.one * 0.8f,
+            0f
+        );
+
+        if (hit)
+        {
+            DestructibleObject block = hit.GetComponent<DestructibleObject>();
+            if (block != null && block.IsBlocking)
+                return false;
+        }
+
         return true;
     }
+
 
     IEnumerator MoveCoroutine(Vector3 targetPos)
     {
