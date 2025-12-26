@@ -64,14 +64,33 @@ public class PlayerJump : MonoBehaviour
 
     bool IsJumpable(Tilemap tilemap, Vector3Int cell)
     {
+        // Tile が無い場所は不可
         TileBase tile = tilemap.GetTile(cell);
         if (tile == null) return false;
 
+        // Tile 自体が障害物
         foreach (var obstacle in obstacleTiles)
         {
             if (tile == obstacle)
                 return false;
         }
+
+        // ★ 破壊可能オブジェクトがあればジャンプ不可
+        Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
+
+        Collider2D hit = Physics2D.OverlapBox(
+            worldPos,
+            Vector2.one * 0.8f,
+            0f
+        );
+
+        if (hit)
+        {
+            IDestructible destructible = hit.GetComponent<IDestructible>();
+            if (destructible != null)
+                return false;
+        }
+
         return true;
     }
 

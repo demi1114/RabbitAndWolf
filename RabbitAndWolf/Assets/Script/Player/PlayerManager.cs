@@ -20,7 +20,6 @@ public class PlayerManager : MonoBehaviour
         }
         Instance = this;
 
-        // ★ ゲーム開始時の Active 制御
         InitializePlayers();
     }
 
@@ -34,8 +33,22 @@ public class PlayerManager : MonoBehaviour
 
     public void SwitchPlayer()
     {
-        players[currentIndex].SetActive(false);
+        GameObject current = players[currentIndex];
+
+        // ★ 現在位置を保存
+        Vector3 sharedPosition = current.transform.position;
+        Quaternion sharedRotation = current.transform.rotation;
+
+        current.SetActive(false);
+
         currentIndex = (currentIndex + 1) % players.Length;
-        players[currentIndex].SetActive(true);
+
+        GameObject next = players[currentIndex];
+
+        // ★ 位置・向きを完全コピー
+        next.transform.position = sharedPosition;
+        next.transform.rotation = sharedRotation;
+
+        next.SetActive(true);
     }
 }

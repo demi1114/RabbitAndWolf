@@ -62,6 +62,7 @@ public class PlayerMove : MonoBehaviour
     void TryMove(Vector3Int dir)
     {
         GetComponent<PlayerJump>()?.SetFacingDirection(dir);
+        GetComponent<PlayerDestroy>()?.SetFacingDirection(dir);
 
         Tilemap tilemap = CurrentTilemap;
 
@@ -78,14 +79,32 @@ public class PlayerMove : MonoBehaviour
 
     bool IsMovable(Tilemap tilemap, Vector3Int cell)
     {
+        // Tile が無い → 通れない
         TileBase tile = tilemap.GetTile(cell);
         if (tile == null) return false;
 
+        // Tile 自体が障害物
         foreach (var obstacle in obstacleTiles)
         {
             if (tile == obstacle)
                 return false;
         }
+
+        // ★ 破壊可能オブジェクトがあるかチェック
+        Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
+        Collider2D hit = Physics2D.OverlapBox(
+            worldPos,
+            Vector2.one * 0.8f,
+            0f
+        );
+
+        if (hit)
+        {
+            DestructibleObject block = hit.GetComponent<DestructibleObject>();
+            if (block != null && block.IsBlocking)
+                return false;
+        }
+
         return true;
     }
 

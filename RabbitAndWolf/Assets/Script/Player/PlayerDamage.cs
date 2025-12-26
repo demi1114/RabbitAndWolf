@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
@@ -37,8 +38,7 @@ public class PlayerDamage : MonoBehaviour, IDamageable
 
     void Die()
     {
-        Debug.Log($"{gameObject.name} Dead");
-        // キャラ切り替え or ゲームオーバー処理
+        SceneManager.LoadScene("ResultScene");
     }
 
     IEnumerator InvincibleCoroutine()
