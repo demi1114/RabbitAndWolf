@@ -206,7 +206,7 @@ MonoBehaviour:
       - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 9
 --- !u!1 &149309805
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,10 +735,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 433682715}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -796,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 8
 --- !u!1 &452822796
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,10 +882,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 452822801}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -942,6 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 4
 --- !u!1 &494350236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,10 +1029,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 494350241}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1088,6 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 6
 --- !u!1 &505060265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,10 +1312,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 527905696}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1370,6 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 3
 --- !u!1 &744794914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2006,7 @@ MonoBehaviour:
       - m_Target: {fileID: 953653279}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2060,6 +2065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 1
 --- !u!1 &1045582997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2289,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1167990407}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2342,6 +2348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 2
 --- !u!1 &1229917621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,10 +2978,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450920238}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3033,6 +3040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 5
 --- !u!1 &1462751236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,7 +3128,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1462751241}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3179,6 +3187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 0
 --- !u!1 &1463134725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,10 +3272,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1463134730}
+      - m_Target: {fileID: 141742808}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3325,6 +3334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 7
 --- !u!1 &1659939030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,6 +3696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66055358bd4a7742be5063825857372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectSceneButton
+  stageIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

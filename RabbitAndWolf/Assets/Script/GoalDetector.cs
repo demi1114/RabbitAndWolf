@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
-public class GoalHitDetector : MonoBehaviour
+public class GoalDetector : MonoBehaviour
 {
     [Header("Tilemap")]
     [SerializeField] private Tilemap tilemap;
@@ -13,23 +13,28 @@ public class GoalHitDetector : MonoBehaviour
     {
         if (hasReached) return;
 
-        // 敵と同じ：現在操作中のプレイヤーのみ判定
         GameObject player = PlayerManager.Instance.CurrentPlayer;
         if (player == null) return;
 
-        // タイルマップのセル座標で比較
         Vector3Int goalCell = tilemap.WorldToCell(transform.position);
         Vector3Int playerCell = tilemap.WorldToCell(player.transform.position);
 
         if (goalCell == playerCell)
         {
             hasReached = true;
-            OnReachGoal(player);
+            OnReachGoal();
         }
     }
 
-    void OnReachGoal(GameObject player)
+    void OnReachGoal()
     {
-        SceneManager.LoadScene("SelectScene");
+        // 現在のステージ番号取得
+        int stageIndex = PlayerPrefs.GetInt("StageIndex", 0);
+
+        // ステージクリア保存
+        PlayerPrefs.SetInt($"StageClear_{stageIndex}", 1);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("ClearScene");
     }
 }
