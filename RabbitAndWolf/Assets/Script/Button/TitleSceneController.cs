@@ -9,11 +9,11 @@ public class TitleSceneController : MonoBehaviour
         SceneManager.LoadScene("SelectScene");
     }
 
-    // SettingScene Ç÷
-   /* public void GoToSettingScene()
+    // StoryScene Ç÷
+    public void GoToStoryScene()
     {
-        SceneManager.LoadScene("SettingScene");
-    }*/
+        SceneManager.LoadScene("StoryScene");
+    }
 
     // ÉQÅ[ÉÄèIóπ
     public void QuitGame()

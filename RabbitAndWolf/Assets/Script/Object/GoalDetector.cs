@@ -35,6 +35,14 @@ public class GoalDetector : MonoBehaviour
         PlayerPrefs.SetInt($"StageClear_{stageIndex}", 1);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("ClearScene");
+        // ステージ10（index 9）のみ FullClearScene
+        if (stageIndex == 9)
+        {
+            SceneManager.LoadScene("FullClearScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("ClearScene");
+        }
     }
 }
