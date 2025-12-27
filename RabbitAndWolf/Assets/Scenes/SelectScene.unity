@@ -735,7 +735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 433682715}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 452822801}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 494350241}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 527905696}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 1450920238}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141742808}
+      - m_Target: {fileID: 1463134730}
         m_TargetAssemblyTypeName: SelectSceneButton, Assembly-CSharp
         m_MethodName: GoToMainScene
         m_Mode: 1
