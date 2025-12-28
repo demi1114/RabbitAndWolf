@@ -52,10 +52,11 @@ public class BGMManager : MonoBehaviour
                 break;
 
             case "ResultScene":
+            case "ClearScene":
                 nextClip = resultBGM;
                 break;
 
-            case "ClearScene":
+            case "FullClearScene":
                 nextClip = clearBGM;
                 break;
         }

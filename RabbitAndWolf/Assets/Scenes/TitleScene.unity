@@ -179,7 +179,7 @@ MonoBehaviour:
   m_text: STORY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
-  m_sharedMaterial: {fileID: -8475471807457117746, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
+  m_sharedMaterial: {fileID: 5411729614501127827, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
-  m_sharedMaterial: {fileID: -8475471807457117746, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
+  m_sharedMaterial: {fileID: 5411729614501127827, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1246,7 +1246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1838983214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   bgmSource: {fileID: 1838983215}
   titleBGM: {fileID: 8300000, guid: fccff22ba3f3d594bbbf7a4764ef4a8c, type: 3}
   mainBGM: {fileID: 8300000, guid: d95f32a74c259f0459bef27655badc08, type: 3}
-  resultBGM: {fileID: 8300000, guid: fe6bcf4d5111826459ebf579e9ffe045, type: 3}
+  resultBGM: {fileID: 8300000, guid: e843a8b1ca42b874e8b975dffd99f2c9, type: 3}
   clearBGM: {fileID: 8300000, guid: fe6bcf4d5111826459ebf579e9ffe045, type: 3}
 --- !u!82 &1838983215
 AudioSource:
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
-  m_sharedMaterial: {fileID: -8475471807457117746, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
+  m_sharedMaterial: {fileID: 5411729614501127827, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_text: "\u30A6\u30B5\u30AE\u3061\u3083\u3093\u3068\u30AA\u30AA\u30AB\u30DF\u304F\u3093"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
-  m_sharedMaterial: {fileID: -8475471807457117746, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
+  m_sharedMaterial: {fileID: 5411729614501127827, guid: bdb5f65f0c9231c4f8f69ef2d10009e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
